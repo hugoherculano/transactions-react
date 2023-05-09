@@ -1,13 +1,15 @@
-import { Button } from "./components/Button";
+import { ThemeProvider } from "styled-components";
+import { DefaultTheme } from "./styles/themes/Default";
+import { GlobalStyle } from "./styles/global";
+import { Transactions } from "./pages/Transactions";
 
 export function App() {
+
   return (
-    <>
-      <Button />
-      <Button />
-      <Button />
-      <Button />
-      <Button />
-    </>
+    <ThemeProvider theme={DefaultTheme}>
+      <GlobalStyle />
+      
+      <Transactions />
+    </ThemeProvider>
   )
 }
