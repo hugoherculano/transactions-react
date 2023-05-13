@@ -19,11 +19,13 @@ export const Content = styled(Dialog.Content)`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
   form {
     margin-top: 2rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
+
     input {
       border-radius: 6px;
       border: 0;
@@ -34,6 +36,7 @@ export const Content = styled(Dialog.Content)`
         color: ${props => props.theme["gray-500"]};
       }
     }
+
     button[type="submit"] {
       height: 50px;
       border: 0;
@@ -44,7 +47,13 @@ export const Content = styled(Dialog.Content)`
       border-radius: 6px;
       margin-top: 1.25rem;
       cursor: pointer;
-      &:hover {
+
+      &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+
+      &:not(:disabled):hover {
         background: ${props => props.theme["green-700"]};
         transition: background-color 0.2s;
       }
